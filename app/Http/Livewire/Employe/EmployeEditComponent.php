@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Employe;
 
 use Livewire\Component;
+use App\Models\Employe;
 use App\Models\User;
 use App\Models\Position;
 use App\Models\Department;
@@ -12,13 +13,15 @@ use Livewire\WithFileUploads;
 class EmployeEditComponent extends Component
 {
     use WithFileUploads;
-    public $user_id;
+
+    public string $user_id;
     public $foto;
     public $position_id;
     public $department_id;
     public $telepon;
     public $alamat;
     public $employe_id;
+    public $img;
 
     public function mount($employe_id)
     {
@@ -37,9 +40,9 @@ class EmployeEditComponent extends Component
         $employe = Employe::find($this->employe_id);
         $employe->user_id = $this->user_id;
         if ($this->img) {
-            $imageName = Carbon::now()->timestamp. '.' .$this->img->extension();
-            $this->img->storeAs('Employe', $imageName);
-            $employe->foto = $imageName;
+            $imagename = Carbon::now()->timestamp. '.' .$this->img->extension();
+            $this->img->storeAs('Employe', $imagename);
+            $employe->foto = $imagename;
         }
         $employe->position_id = $this->position_id;
         $employe->department_id = $this->department_id;
@@ -54,15 +57,15 @@ class EmployeEditComponent extends Component
 
     public function render()
     {
-        $employe = Employe::all();
-        $position = Position::all();
-        $user = User::all();
-        $department = Department::all();
+        $employes = Employe::all();
+        $positions = Position::all();
+        $users = User::all();
+        $departments = Department::all();
         return view('livewire.employe.employe-edit-component', [
-            'employe'=> $employe,
-            'position'=> $position,
-            'user'=> $user,
-            'department'=> $department
-        ]);
+            'employes'=> $employes,
+            'positions'=> $positions,
+            'users'=> $users,
+            'departments'=> $departments
+        ])->layout('layout.fe-employe');
     }
 }

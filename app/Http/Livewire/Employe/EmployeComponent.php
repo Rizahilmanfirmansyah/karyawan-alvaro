@@ -7,10 +7,10 @@ use App\Models\Employe;
 
 class EmployeComponent extends Component
 {
-    public function deleteProduct($id)
+    public function deleteEmploye($id)
     {
-        $product = Product::find($id);
-        $product->delete();
+        $employe = Employe::find($id);
+        $employe->delete();
         session()->flash('notif', 'Product Berhasil Didelete');
     }
     

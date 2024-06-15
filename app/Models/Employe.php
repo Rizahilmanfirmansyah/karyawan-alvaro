@@ -10,6 +10,7 @@ class Employe extends Model
     use HasFactory;
     
     protected $table = 'employes';
+    // protected $keyType = 'string';
     protected $fillable = [
         'user_id', 'foto', 'position_id', 'department_id', 'telepon', 'alamat'
     ];
