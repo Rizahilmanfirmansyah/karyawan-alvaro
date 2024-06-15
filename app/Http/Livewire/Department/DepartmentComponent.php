@@ -3,11 +3,15 @@
 namespace App\Http\Livewire\Department;
 
 use Livewire\Component;
+use App\Models\Department;
 
 class DepartmentComponent extends Component
 {
     public function render()
     {
-        return view('livewire.department.department-component');
+        $departments = Edepartments::all();
+        return view('livewire.department.department-component', [
+            'departments' => $departments
+        ])->layout('layout.fe-employe');
     }
 }
