@@ -5,6 +5,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 //wire
 use App\Http\Livewire\Employe\EmployeComponent;
+use App\Http\Livewire\Employe\EmployeAddComponent;
+use App\Http\Livewire\Employe\EmployeEditComponent;
+use App\Http\Livewire\Employe\EmployeDetailComponent;
 use App\Http\Livewire\Position\PositionComponent;
 
 /*
@@ -31,7 +34,11 @@ Route::get('reg', [RegisterController::class, 'index'])->name('register');
 Route::post('aksireg', [RegisterController::class, 'aksireg'])->name('aksireg');
 
 //route livewire
-Route::get('index-employe', EmployeComponent::class);
+Route::get('all-employe', EmployeComponent::class)->name('employe.all');
+Route::get('add-employe', EmployeAddComponent::class)->name('employe.add');
+Route::get('edit-employe/{employe_id}', EmployeEditComponent::class)->name('employe.edit');
+Route::get('detail-employe/{employe_id}', EmployeDetailComponent::class)->name('employe.detail');
+
 
 
 
