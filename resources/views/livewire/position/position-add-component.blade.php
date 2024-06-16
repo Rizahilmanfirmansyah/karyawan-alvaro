@@ -8,7 +8,7 @@
                 <div class="card-body">
                     <form wire:submit.prevent="addPosition" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="alamat" class="form-label">Alamat</label>
+                            <label for="alamat" class="form-label">Isi Kategori Position</label>
                             <input type="text" class="form-control" wire:model="nama">
                             @error('nama') <span class="error">{{$message}}</span> @enderror
                         </div>

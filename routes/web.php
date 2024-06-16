@@ -4,16 +4,22 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 //wire
-use App\Http\Livewire\Employe\EmployeComponent;
-use App\Http\Livewire\Employe\EmployeAddComponent;
-use App\Http\Livewire\Employe\EmployeEditComponent;
-use App\Http\Livewire\Employe\EmployeDetailComponent;
-use App\Http\Livewire\Position\PositionComponent;
-use App\Http\Livewire\Position\PositionEditComponent;
-use App\Http\Livewire\Position\PositionAddComponent;
-use App\Http\Livewire\Department\DepartmentComponent;
-use App\Http\Livewire\Department\DepartmentAddComponent;
-use App\Http\Livewire\Department\DepartmentEditComponent;
+use App\Livewire\Employe\EmployeComponent;
+use App\Livewire\Employe\EmployeAddComponent;
+use App\Livewire\Employe\EmployeEditComponent;
+use App\Livewire\Employe\EmployeDetailComponent;
+use App\Livewire\Position\PositionComponent;
+use App\Livewire\Position\PositionEditComponent;
+use App\Livewire\Position\PositionAddComponent;
+use App\Livewire\Department\DepartmentComponent;
+use App\Livewire\Department\DepartmentAddComponent;
+use App\Livewire\Department\DepartmentEditComponent;
+use App\Livewire\Profile\ProfileComponent;
+use App\Livewire\Profile\ProfileAddComponent;
+use App\Livewire\Profile\ProfileEditComponent;
+use App\Livewire\Profile\ProfileDetailComponent;
+use App\Livewire\Users\UserComponent;
+use App\Livewire\DashboardComponent;
 
 
 /*
@@ -37,6 +43,7 @@ Route::post('aksilogin', [LoginController::class, 'aksilogin'])->name('aksilogin
 Route::post('logout', [LoginController::class, 'aksilogout'])->name('aksilogout');  
 
 Route::get('reg', [RegisterController::class, 'index'])->name('register');
+Route::get('reg-admin', [RegisterController::class, 'index2'])->name('register.admin');
 Route::post('aksireg', [RegisterController::class, 'aksireg'])->name('aksireg');
 
 //route livewire controller
@@ -52,6 +59,14 @@ Route::get('edit-department/{department_id}', DepartmentEditComponent::class)->n
 Route::get('all-position', PositionComponent::class)->name('position.all');
 Route::get('add-position', PositionAddComponent::class)->name('position.add');
 Route::get('edit-position/{position_id}', PositionEditComponent::class)->name('position.edit');
+
+Route::get('all-profile', ProfileComponent::class)->name('profile.all');
+Route::get('add-profile', ProfileAddComponent::class)->name('profile.add');
+Route::get('edit-profile/{employe_id}', ProfileEditComponent::class)->name('profile.edit');
+Route::get('detail-profile/{employe_id}', ProfileDetailComponent::class)->name('profile.detail');
+
+Route::get('all-users', UserComponent::class)->name('users.all');
+Route::get('dashboard-component', DashboardComponent::class)->name('dashboard.all');
 
 //routing admin
 // Route::get('/', function () {

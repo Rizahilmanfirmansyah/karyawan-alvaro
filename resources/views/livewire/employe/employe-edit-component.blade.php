@@ -6,7 +6,7 @@
                     Edit-Employe
                 </div>
                 <div class="card-body">
-                    <form wire:submit.prevent="addEmploye" enctype="multipart/form-data">
+                    <form wire:submit.prevent="editEmploye" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="foto" class="form-label">Foto</label>
                             <input type="file" class="form-control" wire:model="img">

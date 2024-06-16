@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Inventory</title>
+    <title>The Employee</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -119,12 +119,33 @@
                 <ul class="nav navbar-nav">
                     <li class="menu-title">Dashboard</li><!-- /.menu-title -->
                     <li class="">
-                        <a href="#"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="{{route('dashboard.all')}}"><i class="menu-icon fa fa-desktop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Data Karyawan</li><!-- /.menu-title -->
                     <li class="">
-                        <a href="{{route('employe.all')}}"><i class="menu-icon fa fa-group"></i>Users</a>
+                        <a href="{{route('employe.all')}}"><i class="menu-icon fa fa-male"></i>Employe</a>
                     </li>
+                    @if (Auth::user()->role === 'normal_user')
+                    <li class="">
+                        <a href="{{route('profile.all')}}"><i class="menu-icon fa fa-level-up"></i>Profile</a>
+                    </li>  
+                    @endif
+                    @if (Auth::user()->role === 'admin')
+                    <li class="">
+                        <a href="{{route('department.all')}}"><i class="menu-icon fa fa-briefcase"></i>Department</a>
+                    </li>
+                    <li class="">
+                        <a href="{{route('position.all')}}"><i class="menu-icon fa fa-level-up"></i>Position</a>
+                    </li>
+                    <li class="menu-title">User Account</li><!-- /.menu-title -->
+                    <li class="">
+                        <a href="{{route('users.all')}}"><i class="menu-icon fa fa-group"></i>Users</a>
+                    </li>
+                    <li class="">
+                        <a href="{{route('register.admin')}}"><i class="menu-icon fa fa-share"></i>Register</a>
+                    </li>
+                    @endif
+                   
                     {{-- <li class="menu-title">Order</li><!-- /.menu-title -->
                     <li class="">
                         <a href="{{route('')}}"><i class="menu-icon fa fa-cart-arrow-down"></i>
@@ -248,7 +269,7 @@
                 <div class="navbar-header">
                     {{-- <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> --}}
-                    <a href="#" class="navbar-brand"><b style="color: #2FDBBC;">The </b>Cashier</a>
+                    <a href="#" class="navbar-brand"><b class="text-primary">The </b>Employe</a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>

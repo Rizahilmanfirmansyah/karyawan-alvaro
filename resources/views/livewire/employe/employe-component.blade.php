@@ -4,17 +4,19 @@
         <div class="card position" style="width: 60rem;">
             <div class="card-header">
                 All Employe
+                <br><br>
             </div>
             <div class="card-body">
-                <a href="{{ route('employe.add')}}" class="btn btn-primary">Add Employe</a>
+                @if (Auth::user()->role === 'admin')
+                <a href="{{ route('employe.add')}}" class="btn btn-secondary fa fa-plus-circle"> Add</a>
+                @endif
                 <br><br>
                 @if (Session::has('notif'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">{{Session::get('notif')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 @endif
-                <br><br>
-                <table class="table">
+                <table class="table" id="data-all-user">
                     <thead>
                         <tr>
                             <th>FOTO</th>
@@ -23,7 +25,9 @@
                             <th>DEPARTMENT</th>
                             <th>TELEPON</th>
                             <th>ALAMAT</th>
-                            <th>ACTION</th>
+                            @if (Auth::user()->role === 'admin')
+                            <th>ACTION</th>                               
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -35,17 +39,23 @@
                             <td>{{$employe->department->nama ?? ''}}</td>
                             <td>{{$employe->telepon}}</td>
                             <td>{{$employe->alamat}}</td>
+                            @if (Auth::user()->role === 'admin')
                             <td class="col-2">
                                 <a href="{{ route('employe.edit',['employe_id'=>$employe->id])}}" class="btn btn-secondary fa fa-pencil-square-o"></a>
                                 <a href="{{ route('employe.detail',['employe_id'=>$employe->id])}}" class="btn btn-secondary fa fa-calendar-o"></a>
                                 <a href="#" wire:click.prevent="deleteEmploye({{$employe->id}})" class="btn btn-secondary fa fa-trash"></a>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
-                    </tbody>
-                   
+                    </tbody>                   
                 </table>
             </div>
         </div>
     </div>
 </div>
+<script>
+     new DataTable('#data-all-user', {
+            order: [['0', 'desc']]
+        });
+</script>

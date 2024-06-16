@@ -8,8 +8,14 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('register');
+    }
+
+    public function index2()
+    {
+        return view('registerAdmin');
     }
 
     public function aksireg(Request $request){
