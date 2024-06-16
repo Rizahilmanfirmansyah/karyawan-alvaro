@@ -46,6 +46,8 @@
                 </table>
             </div>
         </div>
+        <br><br>
+        @livewire('users.normal-user-component')
     </div>
 </div>
 <script>

@@ -35,7 +35,7 @@ class ProfileEditComponent extends Component
         $this->$employe_id = $employe->id;
     }
 
-    public function EditEmploye()
+    public function editEmploye()
     {
         $employe = Employe::find($this->employe_id);
         $employe->user_id = $this->user_id;

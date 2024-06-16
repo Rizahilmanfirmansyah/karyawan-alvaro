@@ -128,7 +128,8 @@
                     @if (Auth::user()->role === 'normal_user')
                     <li class="">
                         <a href="{{route('profile.all')}}"><i class="menu-icon fa fa-level-up"></i>Profile</a>
-                    </li>  
+                    </li> 
+
                     @endif
                     @if (Auth::user()->role === 'admin')
                     <li class="">

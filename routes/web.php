@@ -19,6 +19,8 @@ use App\Livewire\Profile\ProfileAddComponent;
 use App\Livewire\Profile\ProfileEditComponent;
 use App\Livewire\Profile\ProfileDetailComponent;
 use App\Livewire\Users\UserComponent;
+use App\Livewire\Users\NormalUserComponent;
+use App\Livewire\Users\UserEditComponent;
 use App\Livewire\DashboardComponent;
 
 
@@ -66,6 +68,8 @@ Route::get('edit-profile/{employe_id}', ProfileEditComponent::class)->name('prof
 Route::get('detail-profile/{employe_id}', ProfileDetailComponent::class)->name('profile.detail');
 
 Route::get('all-users', UserComponent::class)->name('users.all');
+Route::get('edit-users/{user_id}', UserEditComponent::class)->name('users.edit');
+Route::get('all-normalUser', UserComponent::class)->name('users.normal');
 Route::get('dashboard-component', DashboardComponent::class)->name('dashboard.all');
 
 //routing admin
