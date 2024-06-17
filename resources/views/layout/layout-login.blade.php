@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Inventory</title>
+		<title>The Employe</title>
+		<link rel="icon" href="{{ asset('background-image/icon-employe2.png')}}" type="image/icon type">
 		<meta name="description" content="Ela Admin - HTML5 Admin Template">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	

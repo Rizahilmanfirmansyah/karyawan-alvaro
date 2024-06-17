@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>The Employee</title>
+    <link rel="icon" href="{{ asset('background-image/icon-employe2.png')}}" type="image/icon type">
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -268,10 +269,15 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    {{-- <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
-                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> --}}
+                    {{-- <a class="navbar-brand" href="./"><img src="{{ asset('background-image/icon-employe2.png')}}" alt="Logo" style="width: 200px;"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="{{ asset('background-image/icon-employe2.png')}}" alt="Logo"></a> --}}
+                    {{-- <a class="navbar-brand" href="./"><img src="{{ asset('eadmin/')}}images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="{{ asset('eadmin/')}}images/logo2.png" alt="Logo"></a> --}}
+
+                    {{-- <img class="navbar-brand" src="{{ asset('background-image/icon-employe2.png')}}" style="width: 30px;" alt=""> --}}
                     <a href="#" class="navbar-brand"><b class="text-primary">The </b>Employe</a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                    <a id="menuToggle" class="menutoggle">
+                        <i class="fa fa-bars"></i></a>
                 </div>
             </div>
             <div class="top-right">
