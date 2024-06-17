@@ -273,9 +273,8 @@
                     <a class="navbar-brand hidden" href="./"><img src="{{ asset('background-image/icon-employe2.png')}}" alt="Logo"></a> --}}
                     {{-- <a class="navbar-brand" href="./"><img src="{{ asset('eadmin/')}}images/logo.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="{{ asset('eadmin/')}}images/logo2.png" alt="Logo"></a> --}}
-
-                    {{-- <img class="navbar-brand" src="{{ asset('background-image/icon-employe2.png')}}" style="width: 30px;" alt=""> --}}
-                    <a href="#" class="navbar-brand"><b class="text-primary">The </b>Employe</a>
+                    <img class="navbar-brand" src="{{ asset('background-image/icon-employe2.png')}}" style="width: 30px;" alt="">
+                    <a href="#" class="" style="margin-right: 50px;"><b class="text-primary">The </b>Employe</a>
                     <a id="menuToggle" class="menutoggle">
                         <i class="fa fa-bars"></i></a>
                 </div>
